@@ -10,7 +10,7 @@
   <div id='map'>
   </div>
   <div id='selections' class="selections">
-    <a href='#' class="show">Choose what supermarkets to display</a>
+    <a href='#' class="show">Choose the Hospitals to display</a>
     <div class='content'>
       <a href='#' class="hide">Hide</a>
       <div id="toggles">
@@ -20,12 +20,12 @@
   <div id='loading'>
   </div>
   <div id='selected'>
-    <h1>Explore supermarkets in the UK</h1>
+    <h1>Viewing Hospitals in New York State, US</h1>
   </div>
   <div id='about'>
     <a href='#' class="show">About</a>
     <p class='content'>
-      Explore UK supermarkets using a voronoi diagram. Created by <a href="http://chriszetter.com">Chris Zetter</a>, powered by data from <a href="http://www.superlocate.net/">SuperLocate</a>, maps copyright
+      Viewing the distribution of hospitals in New York.
       <a href='https://www.mapbox.com/about/maps/' target='_blank'>Mapbox and OpenStreetMap</a>.
       <a href='#' class="hide">Hide</a>
     </div>
@@ -36,10 +36,10 @@
   <script>
     L.mapbox.accessToken = 'pk.eyJ1IjoiZGhydXZhLWciLCJhIjoiY2p1bHM3NzMzMG0xejQ5cXN4YmZ1aDJsZCJ9.yCUbhZtTIOi9GFlGtW8cmw';
     map = L.mapbox.map('map', 'zetter.i73ka9hn')
-      .fitBounds([[59.355596 , -9.052734], [49.894634 , 3.515625]]);
-
-    url = '../data/supermarkets.csv';
-    initialSelection = d3.set(['Tesco', 'Sainsburys']);
+      .fitBounds([[45.180727, -81.137476], [35.894634 , -69.515625]]);
+      
+    url = '../data/processed_hospitals_clean.csv';
+    initialSelection = d3.set(['HOSP', 'DTC']);
     voronoiMap(map, url, initialSelection);
   </script>
 </body>
